@@ -1,13 +1,3 @@
-"""
-extract.py — pulls live weather data from Open-Meteo for every
-grid zone defined in config.GRID_LOCATIONS.
-
-Job of this file, and only this file: get raw data OUT of the API
-and hand back something we're confident is well-formed JSON.
-No business logic (load calculations, etc.) belongs here — that's
-transform.py's job.
-"""
-
 import requests
 from data_pipeline.config import WEATHER_API_BASE_URL, GRID_LOCATIONS
 from data_pipeline.utils import retry_with_backoff

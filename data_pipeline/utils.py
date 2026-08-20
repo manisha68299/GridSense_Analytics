@@ -1,8 +1,3 @@
-"""
-utils.py — shared helpers used across the pipeline.
-Currently just the retry decorator, but this is the right home
-for anything reusable that isn't specific to extract/transform/load.
-"""
 
 import time
 import functools
@@ -10,12 +5,7 @@ from data_pipeline.config import MAX_RETRIES, RETRY_BACKOFF_SECONDS
 
 
 def retry_with_backoff(func):
-    """
-    Retries a function on exception, with exponential backoff.
-    Use this on anything that talks to a flaky external resource —
-    an API call or a DB write — not on pure in-memory logic like
-    transform.py, which should fail fast if the math is wrong.
-    """
+    
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         last_exception = None

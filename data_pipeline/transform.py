@@ -1,15 +1,3 @@
-"""
-transform.py — turns raw weather readings into the exact shape
-grid_readings expects, and estimates a load_percentage.
-
-We don't have real smart-meter data, so this is a deliberately
-simple, explainable model: cooling/heating demand rises with
-temperature deviation from a comfortable baseline, and humidity
-has a smaller secondary effect (AC works harder in humid heat).
-This is a stand-in for real load data — say so plainly in a viva,
-don't oversell it as a physics model.
-"""
-
 from datetime import datetime
 from data_pipeline.logger import get_logger
 

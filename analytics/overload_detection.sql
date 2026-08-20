@@ -1,16 +1,3 @@
--- ==========================================================
--- overload_detection.sql
--- Business question: "Which zones are overloaded RIGHT NOW, and
--- which are spiking compared to their own recent trend?"
---
--- Two separate signals, both useful:
---   1. Absolute overload  — load_percentage crosses a hard threshold (85%).
---   2. Relative spike     — current reading is well above that zone's
---                            own rolling average, even if not "critical" yet.
---                            This catches problems early, before they
---                            cross the hard threshold.
--- ==========================================================
-
 -- ---- Part 1: read-only detection query (what the API/dashboard shows) ----
 WITH rolling AS (
     SELECT
@@ -47,10 +34,6 @@ ORDER BY rolling.load_percentage DESC;
 
 
 -- ---- Part 2: write path — insert new alerts for zones currently CRITICAL ----
--- This is what the pipeline (or a scheduled job) would run after every
--- ETL cycle to actually populate critical_alerts. It only inserts an
--- alert if the SAME reading hasn't already been flagged, so re-running
--- this doesn't create duplicate alert spam.
 INSERT INTO critical_alerts (grid_id, reading_id, alert_type, severity, message)
 SELECT
     r.grid_id,

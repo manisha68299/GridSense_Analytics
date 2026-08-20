@@ -1,8 +1,3 @@
-"""
-config.py — single source of truth for credentials, constants,
-and grid metadata. Every other module imports FROM here; nothing
-else should read os.environ directly.
-"""
 
 import os
 from pathlib import Path
@@ -41,12 +36,7 @@ WEATHER_API_BASE_URL = os.getenv(
 # ---------------------------------------------------------
 PIPELINE_INTERVAL_MINUTES = int(os.getenv("PIPELINE_INTERVAL_MINUTES", 5))
 
-# ---------------------------------------------------------
-# Grid metadata — must match the grid_id values seeded in
-# insert_master_data.sql (grid_id 1-5, in the same order).
-# Coordinates are small offsets around Durgapur so each zone
-# pulls slightly different live weather data.
-# ---------------------------------------------------------
+
 GRID_LOCATIONS = [
     {"grid_id": 1, "zone_name": "North Zone",   "latitude": 23.5700, "longitude": 87.3119},
     {"grid_id": 2, "zone_name": "South Zone",   "latitude": 23.4700, "longitude": 87.3119},

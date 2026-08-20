@@ -1,10 +1,3 @@
--- ==========================================================
--- dashboard_queries.sql
--- Grab-bag of queries built specifically for Power BI visuals
--- in Step 6. Each one maps to a named chart/card so there's no
--- guessing which query feeds which visual later.
--- ==========================================================
-
 -- ---- Zone comparison bar chart: avg load per zone, all-time ----
 SELECT
     g.zone_name,

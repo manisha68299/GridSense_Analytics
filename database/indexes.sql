@@ -1,16 +1,4 @@
--- ==========================================================
--- indexes.sql
--- Every index here targets a column you'll actually filter or
--- join on in Steps 3-5 (ETL lookups, analytics views, API routes).
--- Don't index everything blindly — each index costs write
--- performance, so only add what real queries need.
---
--- Run after insert_master_data.sql:
---   psql -U postgres -d green_grid -f indexes.sql
--- ==========================================================
- 
--- Speeds up "get latest readings for a grid" — used constantly by
--- the analytics views and the /latest and /history API routes.
+
 CREATE INDEX idx_grid_readings_grid_id ON grid_readings(grid_id);
  
 -- Speeds up time-range queries (trend analysis, "last hour of data").

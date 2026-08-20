@@ -1,12 +1,3 @@
--- ==========================================================
--- window_functions.sql
--- Business question: "What's the trending load per zone, smoothed
--- over its last 5 readings, instead of reacting to one noisy spike?"
---
--- ROWS BETWEEN 4 PRECEDING AND CURRENT ROW = a 5-reading rolling
--- window per grid. At a 5-minute polling interval that's roughly
--- the last 25 minutes of trend per zone.
--- ==========================================================
 
 SELECT
     g.zone_name,

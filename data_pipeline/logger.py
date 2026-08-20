@@ -1,9 +1,3 @@
-"""
-logger.py — one shared logger configuration for the whole pipeline.
-Every module imports get_logger() instead of setting up its own
-handlers, so all log lines land in the same file with the same format.
-"""
-
 import logging
 from logging.handlers import RotatingFileHandler
 from data_pipeline.config import LOG_FILE_PATH

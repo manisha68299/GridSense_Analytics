@@ -1,11 +1,3 @@
-"""
-database.py — one shared SQLAlchemy engine + a FastAPI dependency
-that hands each request a connection and closes it afterward.
-
-Reuses the same DATABASE_URL config as the ETL pipeline, so there's
-only ever one place credentials are defined for the whole project.
-"""
-
 from sqlalchemy import create_engine
 from data_pipeline.config import DATABASE_URL
 

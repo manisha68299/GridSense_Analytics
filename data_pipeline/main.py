@@ -1,12 +1,3 @@
-"""
-main.py — orchestrates one full Extract -> Transform -> Load run.
-
-This is the file scheduler.py calls every 5 minutes, and also the
-file you run manually to test the whole pipeline end-to-end.
-It owns no logic of its own — just sequencing and logging the
-start/end/outcome of a run.
-"""
-
 import time
 from data_pipeline.extract import extract_all_grids
 from data_pipeline.transform import transform_records

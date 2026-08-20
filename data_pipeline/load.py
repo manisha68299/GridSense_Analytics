@@ -1,12 +1,3 @@
-"""
-load.py — writes clean, transformed records into PostgreSQL.
-
-Job of this file, and only this file: take already-validated
-records and get them into grid_readings. No calculations here —
-if the data's wrong by the time it reaches this file, that's a
-transform.py bug, not a load.py bug.
-"""
-
 from sqlalchemy import create_engine, text
 from data_pipeline.config import DATABASE_URL
 from data_pipeline.utils import retry_with_backoff
@@ -26,13 +17,7 @@ INSERT_QUERY = text("""
 
 @retry_with_backoff
 def _insert_batch(connection, records: list[dict]) -> None:
-    """
-    Single DB write attempt. Wrapped in retry_with_backoff because
-    transient connection drops are the most common failure mode here —
-    a bad/duplicate row should NOT be retried (it'll just fail again),
-    but that's a validation problem, not something this function needs
-    to distinguish for this project's scope.
-    """
+    
     connection.execute(INSERT_QUERY, records)
     connection.commit()
 
