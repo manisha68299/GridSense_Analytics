@@ -21,3 +21,15 @@
 2026-08-21 02:55:39,995 | INFO     | data_pipeline.load | Inserted 5 records into grid_readings.
 2026-08-21 02:55:39,996 | INFO     | data_pipeline.main | === Pipeline run finished in 6.3s | extracted=5 transformed=5 inserted=5 ===
 2026-08-21 02:55:39,998 | INFO     | data_pipeline.scheduler | Scheduler started — running every 5 minutes. Ctrl+C to stop.
+2026-08-21 03:44:59,459 | INFO     | __main__ | ETL scheduler started in background thread.
+2026-08-21 03:44:59,460 | INFO     | __main__ | Starting FastAPI server on http://127.0.0.1:8000 ...
+2026-08-21 03:44:59,463 | INFO     | data_pipeline.main | === Pipeline run started ===
+2026-08-21 03:45:00,957 | INFO     | data_pipeline.extract | Extracted weather for North Zone (grid_id=1)
+2026-08-21 03:45:02,135 | INFO     | data_pipeline.extract | Extracted weather for South Zone (grid_id=2)
+2026-08-21 03:45:03,589 | INFO     | data_pipeline.extract | Extracted weather for East Zone (grid_id=3)
+2026-08-21 03:45:04,968 | INFO     | data_pipeline.extract | Extracted weather for West Zone (grid_id=4)
+2026-08-21 03:45:06,456 | INFO     | data_pipeline.extract | Extracted weather for Central Zone (grid_id=5)
+2026-08-21 03:45:06,458 | INFO     | data_pipeline.transform | Transformed 5/5 records successfully.
+2026-08-21 03:45:06,525 | INFO     | data_pipeline.load | Inserted 5 records into grid_readings.
+2026-08-21 03:45:06,526 | INFO     | data_pipeline.main | === Pipeline run finished in 7.06s | extracted=5 transformed=5 inserted=5 ===
+2026-08-21 03:45:06,526 | INFO     | data_pipeline.scheduler | Scheduler started — running every 5 minutes. Ctrl+C to stop.

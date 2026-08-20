@@ -1,17 +1,3 @@
-"""
-run.py — single entry point that starts BOTH the ETL scheduler and
-the FastAPI server together, in one command.
-
-Why this exists: without it, demoing the project means opening two
-separate terminals (one for `python -m data_pipeline.scheduler`,
-one for `uvicorn api.app:app`) and starting them in the right order.
-This file does both from one `python run.py` command instead.
-
-The scheduler runs in a background thread because it's a blocking
-loop (it never returns control) — running it on the main thread
-would mean the API server never gets a chance to start.
-"""
-
 import threading
 import uvicorn
 
