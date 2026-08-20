@@ -1,0 +1,11 @@
+2026-08-21 00:46:58,732 | INFO     | data_pipeline.main | === Pipeline run started ===
+2026-08-21 00:47:00,226 | INFO     | data_pipeline.extract | Extracted weather for North Zone (grid_id=1)
+2026-08-21 00:47:01,514 | INFO     | data_pipeline.extract | Extracted weather for South Zone (grid_id=2)
+2026-08-21 00:47:03,085 | INFO     | data_pipeline.extract | Extracted weather for East Zone (grid_id=3)
+2026-08-21 00:47:04,374 | INFO     | data_pipeline.extract | Extracted weather for West Zone (grid_id=4)
+2026-08-21 00:47:05,649 | INFO     | data_pipeline.extract | Extracted weather for Central Zone (grid_id=5)
+2026-08-21 00:47:05,649 | INFO     | data_pipeline.transform | Transformed 5/5 records successfully.
+2026-08-21 00:47:05,857 | INFO     | data_pipeline.load | Inserted 5 records into grid_readings.
+2026-08-21 00:47:05,858 | INFO     | data_pipeline.main | === Pipeline run finished in 7.13s | extracted=5 transformed=5 inserted=5 ===
+2026-08-21 00:47:05,859 | INFO     | __main__ | Scheduler started — running every 5 minutes. Ctrl+C to stop.
+2026-08-21 00:47:28,222 | INFO     | __main__ | Scheduler stopped by user.
