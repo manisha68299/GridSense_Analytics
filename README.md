@@ -252,7 +252,6 @@ See `dashboard/dashboard_documentation.md` for details on how each visual is bui
 
 ## 🖼️ Screenshots
 
-*(Add screenshots here — see suggested list below.)*
 
 | Screenshot | Description |
 |---|---|
@@ -284,6 +283,7 @@ Every pipeline run is logged to `logs/pipeline.log` with timestamps and severity
 
 ## 👤 Author
 
-Manisha Banerjee
+- Manisha Banerjee
+
 Final-year B.Tech student — built as a hands-on portfolio project to practice the full data engineering lifecycle: ETL, database design, SQL analytics, REST API development, and BI dashboarding.
 
